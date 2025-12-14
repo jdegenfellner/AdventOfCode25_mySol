@@ -33,5 +33,26 @@ def is_in_ranges(number, ranges):
     return False
 
 valid_numbers = [num for num in numbers if is_in_ranges(num, ranges)]
-print("Valid numbers:", valid_numbers)
-print(len(valid_numbers))
+#print("Valid numbers:", valid_numbers)
+#print(len(valid_numbers))
+
+print(len(ranges)) # 174 ranges?
+
+# part2
+# we need all unique numbers in the ranges
+
+# listing all numbers in the ranges would be too large
+
+# application of formula 15 (https://people.math.ethz.ch/~jteichma/slides_w_fs2021.pdf)
+# seems also not easy since one would have many overlaps, for instance 174 over 2 in the first
+# part of the sum.
+
+# instead we calculate the number of unique numbers in the range
+# by considering the overlaps.
+
+def number_of_integers_in_range(range):
+    start, end = range
+    return end - start + 1
+
+
+
